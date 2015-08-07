@@ -10,6 +10,7 @@ var uploadArticle = function(link, article) {
   var filePath = DATA_PREFIX + link.substring('http://'.length);
   var dataFile = fs.openSync(filePath, 'w+');
   fs.writeSync(dataFile, article);
+  fs.closeSync(dataFile);
 }
 
 var parseArticle = function(err, $, res) {
